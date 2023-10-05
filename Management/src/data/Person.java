@@ -9,7 +9,11 @@ public class Person {
     private String gender;
     private String phone;
     private String address;
-
+    
+    public Person() {
+        
+    }
+    
     public Person(String name, String email, int yob, String gender, String phone, String address) {
         this.name = name;
         this.email = email;
@@ -55,27 +59,40 @@ public class Person {
         return phone;
     }
 
-    public void setPhone(String newphone) {
-        this.phone = newphone;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getAddress() {
         return address;
     }
 
-    public void setAddress(String newaddress) {
-        this.address = newaddress;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return String.format("|%-20s|%-25s|%4d|%6s|%10s|%-25s|",
-                name, email, yob, gender, phone, address);                                          
+    public void showProfile() {
+        System.out.println("The profile is: ");
+        System.out.println("Name: " + this.name);
+        System.out.println("Email: " + this.email);
+        System.out.println("Year of birth: " + this.yob);
+        System.out.println("Gender: " + this.gender);
+        System.out.println("Phone: " + this.phone);
+        System.out.println("Address: " + this.address);
+        
+    } 
+    
+    public void changePhone(String newPhone) {
+        this.phone = newPhone;
+        
+        
     }
     
-    public void showProfile() {
-        System.out.printf("Profile: |%-20s|%-25s|%4d|%6s|%10s|%-25s|\n",
-                name, email, yob, gender, phone, address);
+    public void changeAddress(String newAddress) {
+        this.address = newAddress;
+        
+        
     }
 
 }
+

@@ -1,42 +1,36 @@
 
 package management;
 
-import data.Person;
-import java.util.Scanner;
+import data.Student;
+import data.Lecturer;
+import java.util.ArrayList;
+
+
 
 
 public class Management {
 
    
     public static void main(String[] args) {
-        inputAPerson();
-        
-    }
-    
-    public static void inputAPerson() {
-        String name, email, gender, phone, address;
-        int yob;
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Input name: ");
-        name = sc.nextLine();
-        
-        System.out.print("Input email: ");
-        email = sc.nextLine();
-        
-        System.out.print("Input gender: ");
-        gender = sc.nextLine();
-        
-        System.out.print("Input phone: ");
-        phone = sc.nextLine();
-        
-        System.out.print("Input address: ");
-        address = sc.nextLine();
-        
-        System.out.print("Input year of birth: ");
-        yob = sc.nextInt();
-        
-        Person Trung = new Person(name, email, yob, gender, phone, address);
+        Student Trung = new Student("Nguyễn Quốc Trung", "trungnqqe180151@gmail.com", 2004, "Male", "0862027542", "Bình Định", "SE");
         Trung.showProfile();
+        Trung.changeAddress("TP.HCM");
+        Trung.showProfile();
+        Trung.displaySubject();
+        Lecturer Dung = new Lecturer();
+        ArrayList<String> subjects = new ArrayList<>();
+        subjects.add("PRO192");
+        subjects.add("PRF192");
+        Dung.setSubject(subjects);
+        Dung.displaySubject();
+        
+        Dung.addSubject("MAE101");
+        Dung.displaySubject();
+        Dung.addSubject("MAD101");
+        Dung.displaySubject();
+        Dung.addSubject("IOT102");
+        Dung.displaySubject();
+        
     }
-    
 }
+
